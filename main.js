@@ -7,7 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initGreeting();
     initBlobParallax();
     initCardInteractions();
+    initSearchFilter();
 });
+
+/**
+ * Enables live filtering of application modules based on intuitive text input.
+ */
+function initSearchFilter() {
+    const searchInput = document.getElementById('module-search');
+    const appCards = document.querySelectorAll('.app-card');
+
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        appCards.forEach(card => {
+            const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+            const desc = card.querySelector('p')?.textContent.toLowerCase() || '';
+            
+            // Show card if text matches query natively
+            if (title.includes(query) || desc.includes(query)) {
+                card.style.display = 'flex';
+                card.style.animation = 'fadeInUp 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both'; // Replay animation when shown
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+}
 
 /**
  * Dynamically updates the greeting bar based on the current time.
