@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOPE Foundation | Digital Ecosystem Portal</title>
-    
+
     <!-- SEO & Meta Tags -->
-    <meta name="description" content="Central hub for HOPE Foundation's Digital Asset Management, Performance Appraisal, and Payment tracking systems. One platform, unified access.">
-    <meta name="keywords" content="HOPE Foundation, Asset Management, Performance Appraisal, NGO Portal, Digital Ecosystem">
+    <meta name="description"
+        content="Central hub for HOPE Foundation's Digital Asset Management, Performance Appraisal, and Payment tracking systems. One platform, unified access.">
+    <meta name="keywords"
+        content="HOPE Foundation, Asset Management, Performance Appraisal, NGO Portal, Digital Ecosystem">
     <meta name="author" content="HOPE IT Support">
-    
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hopeams.in/">
@@ -20,482 +24,615 @@
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Inline Styles for Robust Local Rendering -->
     <style>
-/* 
-    HOPE AMS Portal - Premium Ecosystem Design
-    Aesthetic: High-end, Glassmorphism, Dark Mode, Vibrant Accents
+        /* 
+    HOPE AMS Portal - Premium Ecosystem Design v2
+    Aesthetic: High-end, Professional Enterprise Glassmorphism, Deep Dark Mode
 */
 
-:root {
-    /* Color Palette */
-    --bg-deep: #020617;
-    --bg-card: rgba(15, 23, 42, 0.6);
-    --border-glass: rgba(255, 255, 255, 0.08);
-    --border-highlight: rgba(255, 255, 255, 0.2);
-    
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --text-dim: #64748b;
+        :root {
+            /* Refined Color Palette */
+            --bg-deep: #020617;
+            /* Very dark slate, almost black */
+            --bg-card: rgba(15, 23, 42, 0.45);
+            /* More transparent for stronger glass effect */
+            --border-glass: rgba(255, 255, 255, 0.05);
+            /* Softer edge */
+            --border-highlight: rgba(255, 255, 255, 0.15);
+            /* Hover edge */
 
-    --accent-blue: #3b82f6;
-    --accent-indigo: #6366f1;
-    --accent-teal: #14b8a6;
-    --accent-emerald: #10b981;
-    --accent-amber: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
 
-    /* Effects */
-    --blur-main: blur(16px);
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+            /* More professional, slightly desaturated accents */
+            --accent-blue: #3b82f6;
+            --accent-indigo: #6366f1;
+            --accent-teal: #14b8a6;
+            --accent-emerald: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-cyan: #06b6d4;
 
-/* Base Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            /* Pro Effects */
+            --blur-main: blur(24px);
+            /* Deeper blur for premium feel */
+            --glow-card: 0 0 40px rgba(255, 255, 255, 0.02);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            --transition-smooth: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background-color: var(--bg-deep);
-    color: var(--text-main);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    line-height: 1.5;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-h1, h2, h3, .nav-brand {
-    font-family: 'Outfit', sans-serif;
-}
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-/* --- Animated Background Blobs --- */
-.blob-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
+        h1,
+        h2,
+        h3,
+        .nav-brand {
+            font-family: 'Outfit', sans-serif;
+        }
 
-.blob {
-    position: absolute;
-    width: 50vw;
-    height: 50vw;
-    max-width: 600px;
-    max-height: 600px;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.25; /* Increased opacity for better visibility */
-    animation: blobFloat 20s infinite alternate;
-}
+        /* --- Professional Aurora Background --- */
+        .aurora-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 100%, #030b25 0%, var(--bg-deep) 100%);
+        }
 
-.blob-1 {
-    top: -10%;
-    right: -5%;
-    background: var(--accent-blue);
-    animation-duration: 25s;
-}
+        /* Soft, massive background gradients for premium, serene look */
+        .aurora {
+            position: absolute;
+            width: 80vw;
+            height: 80vw;
+            max-width: 1200px;
+            max-height: 1200px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.12;
+            /* Very subtle */
+            animation: auroraFloat 30s ease-in-out infinite alternate;
+        }
 
-.blob-2 {
-    bottom: -10%;
-    left: -5%;
-    background: var(--accent-indigo);
-    animation-duration: 30s;
-    animation-delay: -5s;
-}
+        .aurora-1 {
+            top: -20%;
+            right: -10%;
+            background: var(--accent-blue);
+            animation-duration: 35s;
+        }
 
-.blob-3 {
-    top: 30%;
-    left: 20%;
-    background: var(--accent-teal);
-    width: 30vw;
-    height: 30vw;
-    opacity: 0.2;
-    animation-duration: 35s;
-    animation-delay: -10s;
-}
+        .aurora-2 {
+            bottom: -20%;
+            left: -10%;
+            background: var(--accent-indigo);
+            animation-duration: 40s;
+            animation-delay: -10s;
+        }
 
-@keyframes blobFloat {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(5%, 5%) scale(1.1); }
-    66% { transform: translate(-5%, 8%) scale(0.9); }
-    100% { transform: translate(0, 0) scale(1); }
-}
+        .aurora-3 {
+            top: 20%;
+            left: 10%;
+            background: var(--accent-cyan);
+            width: 50vw;
+            height: 50vw;
+            opacity: 0.08;
+            /* Even softer */
+            animation-duration: 45s;
+            animation-delay: -5s;
+        }
 
-/* --- Navigation --- */
-.top-nav {
-    backdrop-filter: var(--blur-main);
-    background: rgba(2, 6, 23, 0.5);
-    border-bottom: 1px solid var(--border-glass);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+        @keyframes auroraFloat {
+            0% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
 
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            50% {
+                transform: translate(8%, 10%) scale(1.1) rotate(15deg);
+            }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #fff;
-}
+            100% {
+                transform: translate(-5%, -5%) scale(0.95) rotate(-5deg);
+            }
+        }
 
-.nav-brand i {
-    color: var(--accent-blue);
-    font-size: 1.5rem;
-}
+        /* --- Navigation --- */
+        .top-nav {
+            backdrop-filter: var(--blur-main);
+            background: rgba(2, 6, 23, 0.65);
+            /* slightly darker for legibility */
+            border-bottom: 1px solid var(--border-glass);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.25rem 2.5rem;
+            /* increased padding for breathing room */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: var(--transition-smooth);
-}
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
 
-.nav-links a:hover {
-    color: #fff;
-}
+        .nav-brand:hover {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
 
-.nav-btn-admin {
-    padding: 0.5rem 1.25rem;
-    border: 1px solid var(--border-highlight);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.03);
-}
+        .nav-brand:hover .nav-logo {
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+            transform: scale(1.02);
+        }
 
-.nav-btn-admin:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #fff;
-}
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.1;
+        }
 
-/* --- Container & Layout --- */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    width: 100%;
-}
+        .brand-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            color: #fff;
+        }
 
-/* --- Hero Section --- */
-.hero {
-    text-align: center;
-    margin-bottom: 4rem;
-    animation: fadeInDown 0.8s ease-out;
-}
+        .brand-tagline {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 0.15rem;
+        }
 
-.greeting-bar {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.5rem 1.25rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-glass);
-    border-radius: 100px;
-    margin-bottom: 2rem;
-    font-size: 0.85rem;
-    color: var(--accent-blue);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
+        .nav-brand .nav-logo {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
 
-.logo-section h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px;
-}
+        /* --- Container & Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2.5rem 6rem;
+            /* increased overall spacing */
+            width: 100%;
+            flex: 1;
+            /* ensures footer pushes down */
+        }
 
-.logo-section p {
-    font-size: 1.125rem;
-    color: var(--text-muted);
-    max-width: 650px;
-    margin: 0 auto;
-    line-height: 1.7;
-}
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            margin-bottom: 5rem;
+            animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
 
-/* --- App Grid --- */
-.app-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
-    animation: fadeInUp 0.8s 0.2s ease-out both;
-}
+        .greeting-bar {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 1.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 100px;
+            margin-bottom: 2.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            /* Softer than bright blue */
+            font-weight: 500;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.01);
+        }
 
-/* --- App Cards --- */
-.app-card {
-    background: var(--bg-card);
-    backdrop-filter: var(--blur-main);
-    border: 1px solid var(--border-glass);
-    border-radius: 32px;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    transition: var(--transition-smooth);
-    box-shadow: var(--shadow-sm);
-}
+        .greeting-bar span.active-user {
+            color: var(--text-main);
+            font-weight: 600;
+            margin-left: 0.35rem;
+        }
 
-.app-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--border-highlight);
-    box-shadow: var(--shadow-xl);
-}
+        .logo-section h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            /* Ultra-premium gradient text (white to soft slate) */
+            background: linear-gradient(180deg, #FFFFFF 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            /* Tighter tracking for large headings looks professional */
+            line-height: 1.1;
+        }
 
-.app-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 70%);
-    pointer-events: none;
-}
+        .logo-section p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 400;
+            text-wrap: balance;
+        }
 
-.card-status {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0.35rem 0.85rem;
-    border-radius: 100px;
-    background: rgba(0, 0, 0, 0.2);
-}
+        /* --- App Grid --- */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem; /* Tighter corporate grid */
+            animation: fadeInUp 1s 0.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        }
 
-.status-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-}
+        /* --- App Cards --- */
+        .app-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--blur-main);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px; /* sharper corporate corners */
+            padding: 1.5rem; /* Highly compact padding */
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-sm);
+            /* Subtle intrinsic glow */
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
 
-.live { color: var(--accent-emerald); }
-.live .status-dot { background: var(--accent-emerald); box-shadow: 0 0 8px var(--accent-emerald); }
+        /* Sub-layer for the hover glow effect */
+        .app-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: inherit;
+            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, -20%), rgba(255, 255, 255, 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
 
-.maintenance { color: var(--accent-amber); }
-.maintenance .status-dot { background: var(--accent-amber); }
+        .app-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
+        }
 
-.card-icon {
-    width: 72px;
-    height: 72px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-glass);
-    transition: var(--transition-smooth);
-}
+        .app-card:hover::before {
+            opacity: 1;
+            /* Reveal cursor glow if possible, else just static glow */
+        }
 
-.highlight-blue .card-icon { color: var(--accent-blue); background: rgba(59, 130, 246, 0.1); }
-.highlight-indigo .card-icon { color: var(--accent-indigo); background: rgba(99, 102, 241, 0.1); }
+        .card-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 0.6rem;
+            border-radius: 100px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            /* Pro detail: bordered badge */
+            z-index: 10;
+        }
 
-.app-card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
-}
+        .live {
+            color: var(--accent-emerald);
+        }
 
-.card-content h3 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #fff;
-    letter-spacing: -0.5px;
-}
+        .maintenance {
+            color: var(--accent-amber);
+        }
 
-.card-content p {
-    color: var(--text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-}
+        .card-icon {
+            position: relative;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            transition: var(--transition-smooth);
+            /* Inner shadow for premium 3D feel */
+            box-shadow: inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
+        }
 
-.card-action {
-    margin-top: auto;
-}
+        .highlight-blue .card-icon {
+            color: var(--accent-blue);
+            background: linear-gradient(145deg, rgba(59, 130, 246, 0.15), rgba(0, 0, 0, 0));
+            border-color: rgba(59, 130, 246, 0.2);
+        }
 
-.btn-launch {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 1.5rem;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-glass);
-    border-radius: 16px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: var(--transition-smooth);
-    gap: 0.75rem;
-}
+        .highlight-indigo .card-icon {
+            color: var(--accent-indigo);
+            background: linear-gradient(145deg, rgba(99, 102, 241, 0.15), rgba(0, 0, 0, 0));
+            border-color: rgba(99, 102, 241, 0.2);
+        }
 
-.btn-launch i {
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
+        .app-card:hover .card-icon {
+            transform: scale(1.08) translateY(-4px);
+            /* Softer hover animation */
+        }
 
-.btn-launch:hover:not(.disabled) {
-    background: #fff;
-    color: var(--bg-deep);
-}
+        .card-content {
+            position: relative;
+            z-index: 10;
+        }
 
-.btn-launch:hover i {
-    transform: translateX(5px);
-}
+        .card-content h3 {
+            font-size: 1.1rem;
+            /* Scaled down header */
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #fff;
+            letter-spacing: -0.2px;
+        }
 
-.btn-launch.disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            /* Scaled down tracking text */
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+        }
 
-/* --- Coming Soon Shimmer --- */
-.coming-soon {
-    border-style: dashed;
-    background: rgba(15, 23, 42, 0.3);
-}
+        .card-action {
+            margin-top: auto;
+            position: relative;
+            z-index: 10;
+        }
 
-.coming-soon::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.03), transparent);
-    transform: skewX(-25deg);
-    animation: shimmer 3s infinite;
-}
+        .btn-launch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.65rem 1rem;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+            gap: 0.5rem;
+        }
 
-@keyframes shimmer {
-    100% { left: 150%; }
-}
+        .btn-launch i {
+            font-size: 1rem;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            color: var(--text-muted);
+            /* Softer icon color */
+        }
 
-/* --- Footer --- */
-.main-footer {
-    margin-top: auto;
-    padding: 4rem 2rem 2rem;
-    border-top: 1px solid var(--border-glass);
-}
+        .btn-launch:hover:not(.disabled) {
+            background: #fff;
+            color: var(--bg-deep);
+            border-color: #fff;
+        }
 
-.footer-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
+        .btn-launch:hover:not(.disabled) i {
+            color: var(--bg-deep);
+            transform: translateX(6px);
+        }
 
-.footer-info p {
-    color: var(--text-dim);
-    font-size: 0.875rem;
-}
+        .btn-launch.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: transparent;
+            border-style: dashed;
+        }
 
-.version-tag {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-family: monospace;
-    margin-top: 0.25rem;
-}
+        /* --- Coming Soon Shimmer Refined --- */
+        .coming-soon {
+            border-style: dashed;
+            border-color: rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.2);
+        }
 
-.footer-security {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+        .coming-soon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -150%;
+            /* Start further back */
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.02), transparent);
+            transform: skewX(-20deg);
+            animation: shimmer 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
 
-.footer-security i {
-    color: var(--accent-emerald);
-}
+        @keyframes shimmer {
+            100% {
+                left: 200%;
+            }
+        }
 
-/* --- Animations --- */
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        /* --- Footer --- */
+        .main-footer {
+            margin-top: auto;
+            padding: 3rem 2.5rem;
+            border-top: 1px solid var(--border-glass);
+            background: rgba(2, 6, 23, 0.8);
+            /* Solidify the bottom edge slightly */
+            position: relative;
+            z-index: 10;
+        }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
 
-/* --- Mobile Responsive --- */
-@media (max-width: 768px) {
-    .container { padding: 2rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { margin-bottom: 3rem; }
-    .app-grid { grid-template-columns: 1fr; }
-    .app-card { padding: 2rem; }
-    .footer-grid { flex-direction: column; text-align: center; }
-}
+        .footer-info p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .version-tag {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            /* Blend in more */
+            margin-top: 0.35rem;
+        }
+
+        .footer-security {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-security i {
+            color: var(--accent-emerald);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+                filter: blur(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+                filter: blur(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem 4rem;
+            }
+
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                margin-bottom: 3.5rem;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .app-card {
+                padding: 2.25rem;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- Animated Background Elements -->
-    <div class="blob-container">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+    <!-- Professional Aurora Background -->
+    <div class="aurora-container">
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
     </div>
 
     <!-- Navigation Header -->
     <nav class="top-nav">
         <div class="nav-container">
             <div class="nav-brand">
-                <i class="fas fa-shield-halved"></i> <span>HOPE Ecosystem</span>
-            </div>
-            <div class="nav-links">
-                <a href="https://support.hopeams.in" target="_blank">Support</a>
-                <a href="https://admin.hopeams.in" class="nav-btn-admin">Admin Login</a>
+                <img src="logo.jpeg" alt="HOPE Logo" class="nav-logo">
+                <div class="brand-text">
+                    <span class="brand-title">HOPE Digital Ecosystem</span>
+                    <span class="brand-tagline">Internal Management System</span>
+                </div>
             </div>
         </div>
     </nav>
@@ -503,34 +640,30 @@ h1, h2, h3, .nav-brand {
     <main class="container">
         <!-- Hero Section -->
         <header class="hero">
-            <div class="greeting-bar" id="greeting-bar">
-                <!-- Injected via main.js -->
-                <span class="greeting-loader"></span>
-            </div>
             <div class="logo-section">
-                <h1>HOPE AMS Portal</h1>
-                <p>Welcome to your central hub. Securely access and manage organization-wide assets, appraisals, and workflows from a single workspace.</p>
+                <h1>HOPE Portal</h1>
+                <p>Your central workspace for organizing assets, performance, and payments.</p>
             </div>
         </header>
 
         <!-- Application Grid -->
         <section class="app-grid" aria-label="Available Applications">
-            
+
             <!-- Asset Management Card -->
             <article class="app-card highlight-blue">
                 <div class="card-status live">
-                    <span class="status-dot"></span> Live
+                    🟢 Active
                 </div>
                 <div class="card-icon">
                     <i class="fas fa-boxes-stacked"></i>
                 </div>
                 <div class="card-content">
-                    <h3>Asset Management</h3>
-                    <p>Track organizational assets with barcode integration, real-time auditing, and role-based security locks.</p>
+                    <h3>Assets</h3>
+                    <p>Track inventory, manage audits, and monitor security seamlessly.</p>
                 </div>
                 <div class="card-action">
                     <a href="https://asset.hopeams.in" class="btn-launch" aria-label="Launch Asset Management">
-                        Explore Platform <i class="fas fa-arrow-right-long"></i>
+                        Access Module <i class="fas fa-arrow-right-long"></i>
                     </a>
                 </div>
             </article>
@@ -538,18 +671,18 @@ h1, h2, h3, .nav-brand {
             <!-- Performance Appraisal Card -->
             <article class="app-card highlight-indigo">
                 <div class="card-status live">
-                    <span class="status-dot"></span> Live
+                    🟢 Active
                 </div>
                 <div class="card-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
                 <div class="card-content">
-                    <h3>Performance Appraisal</h3>
-                    <p>Drive growth with structured reviews, feedback loops, and automated performance tracking cycles.</p>
+                    <h3>Appraisals</h3>
+                    <p>Manage structured reviews, team feedback, and performance cycles.</p>
                 </div>
                 <div class="card-action">
                     <a href="https://appraisal.hopeams.in" class="btn-launch" aria-label="Launch Performance Appraisal">
-                        Explore Platform <i class="fas fa-arrow-right-long"></i>
+                        Access Module <i class="fas fa-arrow-right-long"></i>
                     </a>
                 </div>
             </article>
@@ -557,40 +690,50 @@ h1, h2, h3, .nav-brand {
             <!-- Payment Tracking Card (Upcoming) -->
             <article class="app-card coming-soon">
                 <div class="card-status maintenance">
-                    <span class="status-dot"></span> Coming Soon
+                    🟡 In Development
                 </div>
                 <div class="card-icon">
                     <i class="fas fa-file-invoice-dollar"></i>
                 </div>
                 <div class="card-content">
-                    <h3>Payment Tracking</h3>
-                    <p>Streamline NGO non-salary payment requests, multi-level approvals, and Tally integration.</p>
+                    <h3>Payments</h3>
+                    <p>Streamline fund requests, secure approvals, and external integrations.</p>
                 </div>
                 <div class="card-action">
                     <button class="btn-launch disabled" disabled>
-                        Under Development <i class="fas fa-lock"></i>
+                        In Progress <i class="fas fa-lock"></i>
                     </button>
                 </div>
             </article>
 
         </section>
 
-        <!-- Footer -->
-        <footer class="main-footer">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <p>&copy; 2024–2025 HOPE IT Support. All rights reserved.</p>
-                    <div class="version-tag">Build v2.4.0 (Stable)</div>
-                </div>
-                <div class="footer-security">
-                    <i class="fas fa-lock"></i> AES-256 Encrypted Ecosystem
-                </div>
-            </div>
-        </footer>
-
     </main>
 
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <p>&copy; 2025–2026 HOPE Foundation IT | v1.0</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
+    <!-- Pro detail: Adding a micro-interaction script for the card glow effect on hover -->
+    <script>
+        // Track mouse position on cards for dynamic glow effect
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
     <script src="main.js"></script>
 </body>
+
 </html>
