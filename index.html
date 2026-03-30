@@ -1,99 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOPE Foundation | Digital Ecosystem</title>
-    <meta name="description" content="Central hub for HOPE Foundation Digital Asset Management and Performance Appraisal Systems.">
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hopeams.in — App Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f; --surface: #13131a; --border: rgba(255,255,255,0.07);
+      --text: #f0f0f8; --muted: #7a7a9a; --accent1: #ff6b6b; --accent2: #4ecdc4;
+      --accent3: #ffe66d; --accent4: #a29bfe; --accent5: #fd79a8; --accent6: #55efc4;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+    .bg-blobs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.18; animation: blobFloat 12s ease-in-out infinite; }
+    .blob-1 { width: 500px; height: 500px; background: var(--accent4); top: -100px; left: -100px; }
+    .blob-2 { width: 400px; height: 400px; background: var(--accent1); top: 30%; right: -100px; animation-delay: -4s; }
+    .blob-3 { width: 350px; height: 350px; background: var(--accent2); bottom: -50px; left: 30%; animation-delay: -8s; }
+    @keyframes blobFloat { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-30px) scale(1.05)} 66%{transform:translate(-20px,20px) scale(0.95)} }
+    .wrapper { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    header { padding: 2.5rem 0 0; display: flex; align-items: center; justify-content: space-between; animation: fadeDown 0.6s ease both; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark { width: 38px; height: 38px; background: linear-gradient(135deg, var(--accent4), var(--accent1)); border-radius: 10px; display: grid; place-items: center; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: white; }
+    .logo-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    .logo-text span { color: var(--accent4); }
+    .header-badge { font-size: 0.72rem; font-weight: 500; color: var(--muted); border: 1px solid var(--border); padding: 0.3rem 0.75rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .hero { padding: 6rem 0 4rem; animation: fadeUp 0.7s ease 0.1s both; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; font-weight: 500; color: var(--accent2); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--accent2); border-radius: 2px; }
+    .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; line-height: 1.0; letter-spacing: -3px; margin-bottom: 1.5rem; }
+    .hero h1 .highlight { background: linear-gradient(90deg, var(--accent1), var(--accent4), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 480px; line-height: 1.7; font-weight: 300; }
+    .stats-bar { display: flex; align-items: center; gap: 2.5rem; margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); animation: fadeUp 0.7s ease 0.2s both; }
+    .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+    .stat-num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; }
+    .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2rem; animation: fadeUp 0.7s ease 0.3s both; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; }
+    .apps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem; margin-bottom: 4rem; }
+    .app-card { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; text-decoration: none; color: inherit; overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; animation: fadeUp 0.6s ease both; display: block; }
+    .app-card::before { content: ''; position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s ease; border-radius: 20px; }
+    .app-card:hover { transform: translateY(-5px); }
+    .app-card:hover::before { opacity: 1; }
+    .card-red::before { background: linear-gradient(135deg, rgba(255,107,107,0.08), transparent); }
+    .card-red:hover { border-color: rgba(255,107,107,0.4); box-shadow: 0 20px 60px rgba(255,107,107,0.15); }
+    .card-teal::before { background: linear-gradient(135deg, rgba(78,205,196,0.08), transparent); }
+    .card-teal:hover { border-color: rgba(78,205,196,0.4); box-shadow: 0 20px 60px rgba(78,205,196,0.15); }
+    .card-purple::before { background: linear-gradient(135deg, rgba(162,155,254,0.08), transparent); }
+    .card-purple:hover { border-color: rgba(162,155,254,0.4); box-shadow: 0 20px 60px rgba(162,155,254,0.15); }
+    .card-yellow::before { background: linear-gradient(135deg, rgba(255,230,109,0.08), transparent); }
+    .card-yellow:hover { border-color: rgba(255,230,109,0.4); box-shadow: 0 20px 60px rgba(255,230,109,0.15); }
+    .card-pink::before { background: linear-gradient(135deg, rgba(253,121,168,0.08), transparent); }
+    .card-pink:hover { border-color: rgba(253,121,168,0.4); box-shadow: 0 20px 60px rgba(253,121,168,0.15); }
+    .card-glow { position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; border-radius: 50%; opacity: 0.12; filter: blur(30px); transition: opacity 0.3s ease; }
+    .app-card:hover .card-glow { opacity: 0.25; }
+    .card-red .card-glow { background: var(--accent1); }
+    .card-teal .card-glow { background: var(--accent2); }
+    .card-purple .card-glow { background: var(--accent4); }
+    .card-yellow .card-glow { background: var(--accent3); }
+    .card-pink .card-glow { background: var(--accent5); }
+    .card-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .card-red .card-icon { background: rgba(255,107,107,0.15); }
+    .card-teal .card-icon { background: rgba(78,205,196,0.15); }
+    .card-purple .card-icon { background: rgba(162,155,254,0.15); }
+    .card-yellow .card-icon { background: rgba(255,230,109,0.15); }
+    .card-pink .card-icon { background: rgba(253,121,168,0.15); }
+    .card-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.5rem; }
+    .card-red .card-label { color: var(--accent1); }
+    .card-teal .card-label { color: var(--accent2); }
+    .card-purple .card-label { color: var(--accent4); }
+    .card-yellow .card-label { color: var(--accent3); }
+    .card-pink .card-label { color: var(--accent5); }
+    .card-title { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+    .card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .card-arrow { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); display: grid; place-items: center; font-size: 0.9rem; transition: transform 0.2s ease, background 0.2s ease; color: var(--muted); }
+    .app-card:hover .card-arrow { transform: rotate(-45deg); background: var(--border); color: var(--text); }
+    .coming-soon-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.3rem 0.6rem; border-radius: 999px; }
+    .coming-soon-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--muted); }
+    .live-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent6); background: rgba(85,239,196,0.1); border: 1px solid rgba(85,239,196,0.2); padding: 0.3rem 0.6rem; border-radius: 999px; }
+    .live-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent6); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; display: flex; align-items: center; justify-content: space-between; margin-top: 1rem; animation: fadeUp 0.7s ease 0.8s both; }
+    .footer-text { font-size: 0.8rem; color: var(--muted); }
+    .footer-text span { color: var(--accent4); }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+    @media(max-width:640px){ .hero{padding:4rem 0 3rem} .stats-bar{gap:1.5rem;flex-wrap:wrap} .apps-grid{grid-template-columns:1fr} .header-badge{display:none} footer{flex-direction:column;gap:0.5rem;text-align:center} }
+  </style>
 </head>
 <body>
-
-    <main class="container">
-        <!-- Header Section -->
-        <header>
-            <div class="logo-section">
-                <h1>HOPE AMS Portal</h1>
-                <p>One Vision, One Platform. Your unified access to the HOPE Foundation's digital management ecosystem.</p>
-            </div>
-        </header>
-
-        <!-- Application Grid -->
-        <section class="app-grid">
-            
-            <!-- Asset Management Card -->
-            <article class="app-card">
-                <span class="badge badge-live">Live</span>
-                <div class="card-icon">
-                    <i class="fas fa-boxes-stacked"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Asset Management</h3>
-                    <p>Track, manage, and audit organizational assets with real-time status updates and security locks.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://asset.hopeams.in" class="btn-launch">
-                        Launch Solution <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Performance Appraisal Card -->
-            <article class="app-card">
-                <span class="badge badge-live">Live</span>
-                <div class="card-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Performance Appraisal</h3>
-                    <p>Comprehensive employee performance tracking, reviews, and professional growth management.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://appraisal.hopeams.in" class="btn-launch">
-                        Launch Solution <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </article>
-
-            <!-- Payment Tracking Card (Coming Soon) -->
-            <article class="app-card disabled">
-                <span class="badge badge-soon">Coming Soon</span>
-                <div class="card-icon">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Payment Tracking</h3>
-                    <p>Upcoming module for NGO payment requests, approvals, and financial workflow automation.</p>
-                </div>
-                <div class="card-action">
-                    <a href="#" class="btn-launch">
-                        Under Development <i class="fas fa-lock ms-2"></i>
-                    </a>
-                </div>
-            </article>
-
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2024 HOPE IT Support. All rights reserved.</p>
-                <div class="support-tag">
-                    <i class="fas fa-shield-halved"></i> Secured Ecosystem by HOPE Foundation
-                </div>
-            </div>
-        </footer>
-
-    </main>
-
-    <script>
-        // Smooth hover animations are handled by CSS, but we can add JS logic here if needed
-        document.addEventListener('DOMContentLoaded', function() {
-            // Future: Add dynamic loading or status checks
-        });
-    </script>
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="wrapper">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">H</div>
+        <div class="logo-text">hope<span>ams</span>.in</div>
+      </div>
+      <div class="header-badge">App Portal</div>
+    </header>
+    <section class="hero">
+      <div class="hero-eyebrow">Hope IT Support</div>
+      <h1>All your<br/><span class="highlight">tools, one</span><br/>place.</h1>
+      <p>A unified hub for all internal applications. Access asset management, appraisals, and more from one central portal.</p>
+      <div class="stats-bar">
+        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Live Apps</span></div>
+        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Coming Soon</span></div>
+        <div class="stat"><span class="stat-num">1</span><span class="stat-label">Domain</span></div>
+      </div>
+    </section>
+    <div class="section-header"><span class="section-title">Applications</span></div>
+    <div class="apps-grid">
+      <a href="https://asset.hopeams.in" class="app-card card-red">
+        <div class="card-glow"></div>
+        <div class="card-icon">📦</div>
+        <div class="card-label">Management</div>
+        <div class="card-title">Asset Management</div>
+        <div class="card-desc">Track, manage and maintain all organizational assets across branches and custodians.</div>
+        <div class="card-footer"><span class="live-badge">Live</span><div class="card-arrow">→</div></div>
+      </a>
+      <a href="https://appraisal.hopeams.in" class="app-card card-teal">
+        <div class="card-glow"></div>
+        <div class="card-icon">📊</div>
+        <div class="card-label">HR</div>
+        <div class="card-title">Employee Appraisal</div>
+        <div class="card-desc">Streamlined performance appraisal system for evaluating and tracking employee growth.</div>
+        <div class="card-footer"><span class="live-badge">Live</span><div class="card-arrow">→</div></div>
+      </a>
+      <div class="app-card card-purple" style="cursor:default;">
+        <div class="card-glow"></div>
+        <div class="card-icon">🧾</div>
+        <div class="card-label">Finance</div>
+        <div class="card-title">Expense Tracker</div>
+        <div class="card-desc">Monitor and manage organizational expenses, budgets, and financial reports.</div>
+        <div class="card-footer"><span class="coming-soon-badge">Coming Soon</span></div>
+      </div>
+      <div class="app-card card-yellow" style="cursor:default;">
+        <div class="card-glow"></div>
+        <div class="card-icon">📅</div>
+        <div class="card-label">Operations</div>
+        <div class="card-title">Leave Management</div>
+        <div class="card-desc">Apply, approve and track employee leaves, holidays and attendance in one place.</div>
+        <div class="card-footer"><span class="coming-soon-badge">Coming Soon</span></div>
+      </div>
+      <div class="app-card card-pink" style="cursor:default;">
+        <div class="card-glow"></div>
+        <div class="card-icon">🎓</div>
+        <div class="card-label">Learning</div>
+        <div class="card-title">Training Portal</div>
+        <div class="card-desc">Onboarding, compliance training and skill development programs for all staff.</div>
+        <div class="card-footer"><span class="coming-soon-badge">Coming Soon</span></div>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-text">© 2026 <span>hopeams.in</span> · Hope IT Support</div>
+      <div class="footer-text">Built with ♥ for the team</div>
+    </footer>
+  </div>
 </body>
 </html>
