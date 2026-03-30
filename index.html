@@ -3,10 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal</title>
+    <title>HOPE Foundation | Digital Ecosystem</title>
+    <meta name="description" content="Central hub for HOPE Foundation Digital Asset Management and Performance Appraisal Systems.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <h1>Welcome to Portal</h1>
-    <p>This is the Hope IT Support Portal.</p>
+
+    <main class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="logo-section">
+                <h1>HOPE AMS Portal</h1>
+                <p>One Vision, One Platform. Your unified access to the HOPE Foundation's digital management ecosystem.</p>
+            </div>
+        </header>
+
+        <!-- Application Grid -->
+        <section class="app-grid">
+            
+            <!-- Asset Management Card -->
+            <article class="app-card">
+                <span class="badge badge-live">Live</span>
+                <div class="card-icon">
+                    <i class="fas fa-boxes-stacked"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Asset Management</h3>
+                    <p>Track, manage, and audit organizational assets with real-time status updates and security locks.</p>
+                </div>
+                <div class="card-action">
+                    <a href="https://asset.hopeams.in" class="btn-launch">
+                        Launch Solution <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Performance Appraisal Card -->
+            <article class="app-card">
+                <span class="badge badge-live">Live</span>
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Performance Appraisal</h3>
+                    <p>Comprehensive employee performance tracking, reviews, and professional growth management.</p>
+                </div>
+                <div class="card-action">
+                    <a href="https://appraisal.hopeams.in" class="btn-launch">
+                        Launch Solution <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Payment Tracking Card (Coming Soon) -->
+            <article class="app-card disabled">
+                <span class="badge badge-soon">Coming Soon</span>
+                <div class="card-icon">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="card-content">
+                    <h3>Payment Tracking</h3>
+                    <p>Upcoming module for NGO payment requests, approvals, and financial workflow automation.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#" class="btn-launch">
+                        Under Development <i class="fas fa-lock ms-2"></i>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 HOPE IT Support. All rights reserved.</p>
+                <div class="support-tag">
+                    <i class="fas fa-shield-halved"></i> Secured Ecosystem by HOPE Foundation
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Smooth hover animations are handled by CSS, but we can add JS logic here if needed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Future: Add dynamic loading or status checks
+        });
+    </script>
 </body>
 </html>
