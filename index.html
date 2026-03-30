@@ -240,10 +240,223 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2.5rem 6rem;
-            /* Tighter spacing for dashboard feel */
+            /* Tighter spacing for pure dashboard */
             width: 100%;
             flex: 1;
-            /* ensures footer pushes down */
+        }
+
+        /* --- App Header Context Bar --- */
+        .app-header {
+            background: rgba(15, 23, 42, 0.4);
+            border-bottom: 1px solid var(--border-glass);
+            backdrop-filter: var(--blur-main);
+        }
+
+        .app-header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
+        .header-left h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        .header-left p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar {
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            width: 240px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            width: 100%;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .search-bar i {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* --- Dashboard Layout Split --- */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* --- Section Headings --- */
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+            padding-bottom: 0.75rem;
+        }
+
+        .section-heading h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .heading-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--text-main);
+        }
+
+        /* --- Sidebar Widgets --- */
+        .side-widget {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: var(--blur-main);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .widget-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+        }
+
+        .widget-header h4 {
+            font-size: 0.95rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-emerald);
+        }
+
+        .widget-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .widget-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.85rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 8px;
+        }
+
+        .list-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
+
+        .list-title {
+            font-size: 0.85rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .list-sub {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-green {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .badge-yellow {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-amber);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .env-label {
+            font-size: 0.6rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .env-label.prod {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-emerald);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+        }
+
+        .env-label.dev {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+            border: 1px solid rgba(245, 158, 11, 0.4);
         }
 
         .greeting-bar {
@@ -274,8 +487,8 @@
         /* --- App Grid --- */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.25rem; /* Tighter corporate grid */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem; /* Larger gap for prominent cards */
             animation: fadeInUp 1s 0.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
         }
 
@@ -310,9 +523,9 @@
         }
 
         .app-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 255, 255, 0.1);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 45px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 255, 255, 0.15);
         }
 
         .app-card:hover::before {
@@ -388,8 +601,11 @@
         }
 
         .card-content h3 {
-            font-size: 1.1rem;
-            /* Scaled down header */
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            /* Slightly larger for prominence */
             font-weight: 600;
             margin-bottom: 0.4rem;
             color: #fff;
@@ -599,7 +815,7 @@
 
     <!-- Navigation Header -->
     <nav class="top-nav">
-        <div class="nav-container">
+        <div class="nav-container app-header-container">
             <div class="nav-brand">
                 <img src="logo.jpeg" alt="HOPE Logo" class="nav-logo">
                 <div class="brand-text">
@@ -610,69 +826,131 @@
         </div>
     </nav>
 
+    <!-- App Context Header -->
+    <div class="app-header">
+        <div class="app-header-container">
+            <div class="header-left">
+                <h2>Application Portal</h2>
+                <p id="current-date-display">System synced and active</p>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search modules..." readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="container">
-        <!-- Application Grid -->
-        <section class="app-grid" aria-label="Available Applications">
+        <div class="dashboard-layout">
+            <!-- Left: Main Modules Column -->
+            <div class="main-column">
+                <div class="section-heading">
+                    <h3>Core Systems</h3>
+                    <span class="heading-badge">3 Apps</span>
+                </div>
 
-            <!-- Asset Management Card -->
-            <article class="app-card highlight-blue">
-                <div class="card-status live">
-                    🟢 Active
-                </div>
-                <div class="card-icon">
-                    <i class="fas fa-boxes-stacked"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Assets</h3>
-                    <p>Track inventory, manage audits, and monitor security seamlessly.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://asset.hopeams.in" target="_blank" rel="noopener noreferrer" class="btn-launch" aria-label="Launch Asset Management">
-                        Access Module <i class="fas fa-arrow-right-long"></i>
-                    </a>
-                </div>
-            </article>
+                <section class="app-grid" aria-label="Available Applications">
 
-            <!-- Performance Appraisal Card -->
-            <article class="app-card highlight-indigo">
-                <div class="card-status live">
-                    🟢 Active
-                </div>
-                <div class="card-icon">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Appraisals</h3>
-                    <p>Manage structured reviews, team feedback, and performance cycles.</p>
-                </div>
-                <div class="card-action">
-                    <a href="https://appraisal.hopeams.in" target="_blank" rel="noopener noreferrer" class="btn-launch" aria-label="Launch Performance Appraisal">
-                        Access Module <i class="fas fa-arrow-right-long"></i>
-                    </a>
-                </div>
-            </article>
+                    <!-- Asset Management Card -->
+                    <article class="app-card highlight-blue">
+                        <div class="card-status live">
+                            🟢 Active
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-boxes-stacked"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Assets <span class="env-label prod">PROD</span></h3>
+                            <p>Track inventory, manage audits, and monitor security seamlessly.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://asset.hopeams.in" target="_blank" rel="noopener noreferrer" class="btn-launch" aria-label="Launch Asset Management">
+                                Access Module <i class="fas fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </article>
 
-            <!-- Payment Tracking Card (Upcoming) -->
-            <article class="app-card coming-soon">
-                <div class="card-status maintenance">
-                    🟡 In Development
-                </div>
-                <div class="card-icon">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                </div>
-                <div class="card-content">
-                    <h3>Payments</h3>
-                    <p>Streamline fund requests, secure approvals, and external integrations.</p>
-                </div>
-                <div class="card-action">
-                    <button class="btn-launch disabled" disabled>
-                        In Progress <i class="fas fa-lock"></i>
-                    </button>
-                </div>
-            </article>
+                    <!-- Performance Appraisal Card -->
+                    <article class="app-card highlight-indigo">
+                        <div class="card-status live">
+                            🟢 Active
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Appraisals <span class="env-label prod">PROD</span></h3>
+                            <p>Manage structured reviews, team feedback, and performance cycles.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://appraisal.hopeams.in" target="_blank" rel="noopener noreferrer" class="btn-launch" aria-label="Launch Performance Appraisal">
+                                Access Module <i class="fas fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </article>
 
-        </section>
+                    <!-- Payment Tracking Card (Upcoming) -->
+                    <article class="app-card coming-soon">
+                        <div class="card-status maintenance">
+                            🟡 In Development
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Payments <span class="env-label dev">DEV</span></h3>
+                            <p>Streamline fund requests, secure approvals, and external integrations.</p>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-launch disabled" disabled>
+                                In Progress <i class="fas fa-lock"></i>
+                            </button>
+                        </div>
+                    </article>
 
+                </section>
+            </div>
+
+            <!-- Right: System Insights Sidebar -->
+            <aside class="sidebar-column">
+                <div class="section-heading">
+                    <h3>System Insights</h3>
+                </div>
+
+                <div class="side-widget sys-status-widget">
+                    <div class="widget-header">
+                        <h4><i class="fas fa-server"></i> Platform Health</h4>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <ul class="widget-list">
+                        <li>
+                            <div class="list-info">
+                                <span class="list-title">Asset Database</span>
+                                <span class="list-sub">Synchronized</span>
+                            </div>
+                            <span class="badge badge-green">Online</span>
+                        </li>
+                        <li>
+                            <div class="list-info">
+                                <span class="list-title">Appraisal Engine</span>
+                                <span class="list-sub">Review Cycle Open</span>
+                            </div>
+                            <span class="badge badge-green">Online</span>
+                        </li>
+                        <li>
+                            <div class="list-info">
+                                <span class="list-title">Payment Gateway</span>
+                                <span class="list-sub">Integration Pending</span>
+                            </div>
+                            <span class="badge badge-yellow">Build</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+        </div>
     </main>
 
     <!-- Footer -->
