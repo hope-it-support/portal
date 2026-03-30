@@ -239,18 +239,11 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2.5rem 6rem;
-            /* increased overall spacing */
+            padding: 3rem 2.5rem 6rem;
+            /* Tighter spacing for dashboard feel */
             width: 100%;
             flex: 1;
             /* ensures footer pushes down */
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            text-align: center;
-            margin-bottom: 5rem;
-            animation: fadeInDown 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .greeting-bar {
@@ -276,29 +269,7 @@
             margin-left: 0.35rem;
         }
 
-        .logo-section h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            /* Ultra-premium gradient text (white to soft slate) */
-            background: linear-gradient(180deg, #FFFFFF 0%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1.5px;
-            /* Tighter tracking for large headings looks professional */
-            line-height: 1.1;
-        }
-
-        .logo-section p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            max-width: 500px;
-            margin: 0 auto;
-            line-height: 1.7;
-            font-weight: 400;
-            text-wrap: balance;
-        }
+        /* Primary text styles removed - Using top-level navigation branding instead */
 
         /* --- App Grid --- */
         .app-grid {
@@ -640,14 +611,6 @@
     </nav>
 
     <main class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="logo-section">
-                <h1>HOPE Portal</h1>
-                <p>Your central workspace for organizing assets, performance, and payments.</p>
-            </div>
-        </header>
-
         <!-- Application Grid -->
         <section class="app-grid" aria-label="Available Applications">
 
