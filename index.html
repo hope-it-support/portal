@@ -37,7 +37,7 @@
 */
 
         :root {
-            /* Refined Color Palette */
+            /* Refined Color Palette to match Official HOPE Branding */
             --bg-deep: #020617;
             /* Very dark slate, almost black */
             --bg-card: rgba(15, 23, 42, 0.45);
@@ -51,8 +51,9 @@
             --text-muted: #94a3b8;
             --text-dim: #64748b;
 
-            /* More professional, slightly desaturated accents */
-            --accent-blue: #3b82f6;
+            /* Brand Colors / Corporate Accents */
+            --accent-blue: #003057; /* Official HOPE Navy */
+            --accent-blue-vibrant: #2563eb; /* High-contrast variant for UI prominence */
             --accent-indigo: #6366f1;
             --accent-teal: #14b8a6;
             --accent-emerald: #10b981;
@@ -126,7 +127,7 @@
         .aurora-1 {
             top: -20%;
             right: -10%;
-            background: var(--accent-blue);
+            background: var(--accent-blue-vibrant);
             animation-duration: 35s;
         }
 
@@ -194,11 +195,11 @@
         }
 
         .nav-brand:hover {
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+            text-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
         }
 
         .nav-brand:hover .nav-logo {
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.3);
             transform: scale(1.02);
         }
 
@@ -452,9 +453,9 @@
         }
 
         .highlight-blue .card-icon {
-            color: var(--accent-blue);
-            background: linear-gradient(145deg, rgba(59, 130, 246, 0.15), rgba(0, 0, 0, 0));
-            border-color: rgba(59, 130, 246, 0.2);
+            color: var(--accent-blue-vibrant);
+            background: linear-gradient(145deg, rgba(37, 99, 235, 0.15), rgba(0, 0, 0, 0));
+            border-color: rgba(37, 99, 235, 0.2);
         }
 
         .highlight-indigo .card-icon {

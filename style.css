@@ -14,7 +14,9 @@
     --text-muted: #94a3b8;
     --text-dim: #64748b;
 
-    --accent-blue: #3b82f6;
+    /* Brand Colors / Corporate Accents */
+    --accent-blue: #003057; /* Official HOPE Navy */
+    --accent-blue-vibrant: #2563eb; /* High-contrast variant */
     --accent-indigo: #6366f1;
     --accent-teal: #14b8a6;
     --accent-emerald: #10b981;
@@ -79,7 +81,7 @@ h1, h2, h3, .nav-brand {
 .blob-1 {
     top: -10%;
     right: -5%;
-    background: var(--accent-blue);
+    background: var(--accent-blue-vibrant);
     animation-duration: 25s;
 }
 
@@ -139,7 +141,7 @@ h1, h2, h3, .nav-brand {
 }
 
 .nav-brand i {
-    color: var(--accent-blue);
+    color: var(--accent-blue-vibrant);
     font-size: 1.5rem;
 }
 
@@ -197,7 +199,7 @@ h1, h2, h3, .nav-brand {
     border-radius: 100px;
     margin-bottom: 2rem;
     font-size: 0.85rem;
-    color: var(--accent-blue);
+    color: var(--accent-blue-vibrant);
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -304,7 +306,7 @@ h1, h2, h3, .nav-brand {
     transition: var(--transition-smooth);
 }
 
-.highlight-blue .card-icon { color: var(--accent-blue); background: rgba(59, 130, 246, 0.1); }
+.highlight-blue .card-icon { color: var(--accent-blue-vibrant); background: rgba(0, 48, 87, 0.1); }
 .highlight-indigo .card-icon { color: var(--accent-indigo); background: rgba(99, 102, 241, 0.1); }
 
 .app-card:hover .card-icon {
